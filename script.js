@@ -50,8 +50,8 @@ function calculate() {
 
     const nutrients = nutrientsTable[getValue('target')]
     const calories = tdee * nutrients.calories
-    const protein = tdee * nutrients.protein / 4 
-    const carbohydrates = tdee * nutrients.carbohydrates / 4
-    const fat = tdee * nutrients.fat / 9 
+    const protein = calories * nutrients.protein / 4 
+    const carbohydrates = calories * nutrients.carbohydrates / 4
+    const fat = calories * nutrients.fat / 9 
     output({bmr: carry(bmr, 10), tdee: carry(tdee, 10), calories, protein, carbohydrates, fat})
 }
